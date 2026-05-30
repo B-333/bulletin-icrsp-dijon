@@ -4,3 +4,7 @@ Thumbs.db
 *.tmp
 *~
 .vscode/
+
+# PDF sources bruts du curé (seule la copie ASCII dans bulletins/ est versionnée)
+_input.pdf
+Dijon*.pdf

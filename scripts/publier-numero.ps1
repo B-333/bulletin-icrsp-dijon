@@ -38,10 +38,15 @@ if ($Phase -eq 'prepare') {
   }
   Ensure-Poppler
   Copy-Item -LiteralPath $SourcePdfPath -Destination (Join-Path $RepoRoot '_input.pdf') -Force
+  # Rendu de TOUTES les pages en PNG. Claude lit ces PNG (l'outil Read affiche les
+  # images sans poppler), ce qui evite de dependre du PATH fige du harness.
+  Remove-Item (Join-Path $RepoRoot '_page-*.png') -ErrorAction SilentlyContinue
+  pdftoppm -png -r 150 (Join-Path $RepoRoot '_input.pdf') (Join-Path $RepoRoot '_page')
+  $pages = (Get-ChildItem (Join-Path $RepoRoot '_page-*.png') | Measure-Object).Count
   $name = Split-Path $SourcePdfPath -Leaf
   $cand = if ($name -match '(\d+)') { $Matches[1] } else { '?' }
   $last = git log --oneline 2>$null | Select-String -Pattern 'Bulletin n.(\d+)' | Select-Object -First 1
-  Write-Host "OK: _input.pdf pret."
+  Write-Host "OK: _input.pdf pret, $pages page(s) rendue(s) en _page-NN.png."
   Write-Host "Numero candidat (nom de fichier): $cand"
   Write-Host "Dernier commit bulletin: $last"
   exit 0
@@ -57,6 +62,7 @@ if (-not $SourcePdfPath -or -not (Test-Path -LiteralPath $SourcePdfPath)) {
 $targetPdf = Join-Path $RepoRoot "bulletins/bulletin-icrsp-dijon-$MoisSlug.pdf"
 Copy-Item -LiteralPath $SourcePdfPath -Destination $targetPdf -Force
 Remove-Item (Join-Path $RepoRoot '_input.pdf') -ErrorAction SilentlyContinue
+Remove-Item (Join-Path $RepoRoot '_page-*.png') -ErrorAction SilentlyContinue
 
 Sync-Path
 git add -A

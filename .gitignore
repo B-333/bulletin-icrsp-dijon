@@ -8,3 +8,6 @@ Thumbs.db
 # PDF sources bruts du curé (seule la copie ASCII dans bulletins/ est versionnée)
 _input.pdf
 Dijon*.pdf
+
+# Pages PDF rendues en images pour l'analyse multimodale (temporaires)
+_page-*.png

@@ -20,10 +20,13 @@ Aucun PDF → STOP, demande son chemin à l'utilisateur.
 ### 2. Préparer la lecture
 Lance :
 `./scripts/publier-numero.ps1 -Phase prepare -SourcePdfPath "<chemin du PDF>"`
-Cela installe poppler si besoin et copie le PDF vers `_input.pdf`.
+Cela installe poppler si besoin, copie le PDF vers `_input.pdf`, et **rend chaque page
+en image `_page-NN.png`** à la racine. Le script affiche le nombre de pages rendues.
 
 ### 3. Lire le PDF (multimodal)
-Lis `_input.pdf` avec l'outil Read, TOUTES les pages, images comprises.
+Lis avec l'outil Read **chaque image `_page-NN.png`** (de `_page-01.png` jusqu'au nombre
+de pages annoncé), TOUTES les pages, dans l'ordre. On lit les PNG (et non le PDF
+directement) car l'outil Read affiche les images sans dépendre du PATH du harness.
 Les images (affiches d'événements) peuvent porter des dates/lieux/contacts : extrais-les.
 
 ### 4. Déduire numéro et mois

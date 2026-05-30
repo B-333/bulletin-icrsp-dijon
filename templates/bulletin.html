@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bulletin ICRSP — Dijon n°1 — Mai 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+/* ============================== */
+/* DESIGN TOKENS                  */
+/* ============================== */
+:root {
+  --color-primary: #1B3A6B;
+  --color-accent: #C49A3C;
+  --color-action: #A63B32;
+  --color-text: #1A1A1A;
+  --color-text-secondary: #5C5C5C;
+  --color-bg: #FFFFFF;
+  --color-bg-card: #F5F2EC;
+  --color-border: #D4CFC7;
+
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Serif 4', 'Source Serif Pro', Georgia, serif;
+  --font-ui: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  --max-width: 680px;
+  --space-section: 56px;
+  --space-block: 32px;
+  --space-paragraph: 16px;
+  --space-card-padding: 20px;
+  --space-page-padding: 18px;
+
+  --radius-card: 8px;
+  --radius-img: 5px;
+  --radius-btn: 6px;
+  --tap-target: 44px;
+}
+
+/* ============================== */
+/* RESET & BASE                   */
+/* ============================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-action);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+a:hover, a:active { opacity: 0.8; text-decoration: underline; }
+
+[id] { scroll-margin-top: 20px; }
+
+/* ============================== */
+/* LAYOUT                         */
+/* ============================== */
+.bulletin {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-page-padding);
+}
+
+.section {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+  border-bottom: 1px solid var(--color-border);
+}
+.section:last-of-type { border-bottom: none; }
+
+/* ============================== */
+/* HEADER                         */
+/* ============================== */
+.header {
+  text-align: center;
+  padding: 28px 0 20px;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.header__blason {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.header__issue {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.header__motto {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-style: italic;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.05em;
+}
+
+/* ============================== */
+/* SOMMAIRE / NAV                 */
+/* ============================== */
+.nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav__item a {
+  display: block;
+  padding: 10px 12px;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-primary);
+  border-radius: 6px;
+  transition: background 0.15s;
+  min-height: var(--tap-target);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.nav__item a:hover {
+  background: var(--color-bg-card);
+  text-decoration: none;
+  opacity: 1;
+}
+
+/* ============================== */
+/* TYPOGRAPHY                     */
+/* ============================== */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.block-title {
+  font-family: var(--font-heading);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.block-subtitle {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+p { margin-bottom: var(--space-paragraph); }
+p:last-child { margin-bottom: 0; }
+
+.auteur {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  text-align: right;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+/* Lettrine */
+.lettrine::first-letter {
+  font-family: var(--font-heading);
+  font-size: 3.4em;
+  float: left;
+  line-height: 0.8;
+  margin-right: 8px;
+  margin-top: 4px;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* Citation */
+.citation {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 20px;
+  margin: 24px 0;
+  font-style: italic;
+}
+.citation-source {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  font-style: normal;
+  display: block;
+  margin-top: 8px;
+}
+
+/* ============================== */
+/* FICHE ÉVÉNEMENT                */
+/* ============================== */
+.fiche-evenement {
+  background: var(--color-bg-card);
+  border-left: 4px solid var(--color-action);
+  border-radius: var(--radius-card);
+  padding: var(--space-card-padding);
+  margin-bottom: var(--space-block);
+}
+.fiche-evenement:last-child { margin-bottom: 0; }
+
+.fiche-evenement .block-title {
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+.fiche-meta {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.fiche-meta__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.fiche-meta__icon {
+  flex-shrink: 0;
+  width: 18px;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+.fiche-meta__date {
+  color: var(--color-action);
+  font-weight: 700;
+}
+.fiche-meta__lieu a {
+  color: var(--color-action);
+}
+
+.fiche-evenement p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.fiche-evenement .fiche-contact {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  margin-top: 14px;
+  color: var(--color-text-secondary);
+}
+
+/* Boutons */
+.btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px 24px;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 700;
+  min-height: var(--tap-target);
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.1s;
+  margin-top: 16px;
+}
+.btn:hover { opacity: 0.9; text-decoration: none; transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn--primary {
+  background: var(--color-action);
+  color: #fff;
+}
+.btn--secondary {
+  background: transparent;
+  color: var(--color-action);
+  border: 1.5px solid var(--color-action);
+}
+
+/* ============================== */
+/* BLOC HORAIRES                  */
+/* ============================== */
+.bloc-horaires {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-card);
+  padding: var(--space-card-padding);
+  margin-bottom: var(--space-block);
+  border-top: 3px solid var(--color-accent);
+}
+.bloc-horaires:last-child { margin-bottom: 0; }
+
+.bloc-horaires .block-title {
+  font-size: 19px;
+  color: var(--color-primary);
+}
+
+.bloc-horaires__address {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin-bottom: 16px;
+}
+.bloc-horaires__address a { color: var(--color-action); }
+
+.horaires-group {
+  margin-bottom: 14px;
+}
+.horaires-group:last-child { margin-bottom: 0; }
+
+.horaires-group__label {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+.horaires-row {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  color: var(--color-text);
+}
+.horaires-row__day { color: var(--color-text-secondary); }
+.horaires-row__time { font-weight: 500; }
+
+/* ============================== */
+/* CARNET FAMILIAL                */
+/* ============================== */
+.carnet-familial {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 28px var(--space-card-padding);
+  text-align: center;
+}
+
+.carnet-familial__title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-variant: small-caps;
+  margin-bottom: 24px;
+}
+
+.carnet-section {
+  margin-bottom: 20px;
+}
+.carnet-section:last-child { margin-bottom: 0; }
+
+.carnet-section__label {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.carnet-section__content {
+  font-size: 16px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.carnet-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: var(--color-accent);
+  font-size: 12px;
+}
+.carnet-separator::before,
+.carnet-separator::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+/* ============================== */
+/* ANNUAIRE                       */
+/* ============================== */
+.annuaire-category {
+  margin-bottom: 28px;
+}
+.annuaire-category:last-child { margin-bottom: 0; }
+
+.annuaire-category__title {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.annuaire-entry {
+  margin-bottom: 10px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.annuaire-entry__role {
+  font-weight: 700;
+  color: var(--color-text);
+  display: block;
+}
+.annuaire-entry__person {
+  color: var(--color-text-secondary);
+}
+.annuaire-entry__person a {
+  color: var(--color-action);
+  white-space: nowrap;
+}
+
+/* ============================== */
+/* TEXTE DÉPLIANT                 */
+/* ============================== */
+.depliant {
+  margin-bottom: var(--space-block);
+  padding-bottom: var(--space-block);
+  border-bottom: 1px dashed var(--color-border);
+}
+.depliant:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+details.depliant-details {
+  cursor: default;
+}
+
+details.depliant-details summary {
+  cursor: pointer;
+  list-style: none;
+  outline: none;
+}
+details.depliant-details summary::-webkit-details-marker { display: none; }
+details.depliant-details summary::marker { display: none; content: ''; }
+
+.depliant-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-top: 12px;
+  padding: 8px 0;
+  min-height: var(--tap-target);
+}
+.depliant-toggle__chevron {
+  transition: transform 0.2s;
+  font-size: 12px;
+}
+details[open] .depliant-toggle__chevron {
+  transform: rotate(180deg);
+}
+
+.depliant-content {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ============================== */
+/* FOOTER                         */
+/* ============================== */
+.footer {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 36px var(--space-page-padding);
+  margin-top: var(--space-section);
+}
+
+.footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer__name {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.footer__role {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  opacity: 0.75;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.footer__links {
+  list-style: none;
+  margin-bottom: 24px;
+}
+.footer__links li {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer__links li .fi { 
+  width: 16px; 
+  text-align: center; 
+  opacity: 0.6; 
+  flex-shrink: 0;
+}
+.footer__links a {
+  color: var(--color-accent);
+}
+.footer__links a:hover { color: #fff; }
+
+.footer__separator {
+  border: none;
+  border-top: 1px solid var(--color-accent);
+  opacity: 0.4;
+  margin: 24px 0;
+}
+
+.footer__institution {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  opacity: 0.6;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.footer__devise {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-accent);
+  text-align: center;
+}
+
+.footer__download {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.footer__download a {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+}
+.footer__download a:hover { color: #fff; }
+
+/* ============================== */
+/* BOUTON RETOUR EN HAUT          */
+/* ============================== */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.2s;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+.back-to-top:hover { transform: translateY(-2px); opacity: 0.9 !important; text-decoration: none; }
+.back-to-top.visible { opacity: 0.7; pointer-events: auto; }
+
+/* ============================== */
+/* RESPONSIVE DESKTOP             */
+/* ============================== */
+@media (min-width: 640px) {
+  body { font-size: 18px; }
+  .header__title { font-size: 30px; }
+  .section-title { font-size: 26px; }
+  .block-title { font-size: 22px; }
+  .nav__list { flex-direction: row; flex-wrap: wrap; gap: 0; }
+  .nav__item a { padding: 8px 14px; font-size: 14px; }
+  .horaires-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .horaires-grid .bloc-horaires { margin-bottom: 0; }
+}
+
+/* ============================== */
+/* PRINT (pour génération PDF)    */
+/* ============================== */
+@media print {
+  .nav, .back-to-top, .btn { display: none; }
+  details[open] > summary .depliant-toggle { display: none; }
+  details { display: block !important; }
+  details > * { display: block !important; }
+  .section { break-inside: avoid; }
+  .footer { break-inside: avoid; }
+  body { font-size: 11pt; }
+}
+</style>
+</head>
+<body id="top">
+
+<!-- ===================== -->
+<!-- HEADER                -->
+<!-- ===================== -->
+<div class="bulletin">
+  <header class="header">
+    <div class="header__blason"><img src="image.png" alt="Blason ICRSP" style="width:100%;height:100%;object-fit:contain;border-radius:50%;"></div>
+    <h1 class="header__title">Bulletin ICRSP — Dijon</h1>
+    <div class="header__issue">{{ISSUE}}</div>
+    <div class="header__motto">Sub Oculis Christi Regis</div>
+  </header>
+
+  <!-- ===================== -->
+  <!-- SOMMAIRE              -->
+  <!-- ===================== -->
+  <nav class="nav" aria-label="Sommaire">
+    <ul class="nav__list">
+      <li class="nav__item"><a href="#editorial">Éditorial</a></li>
+      <li class="nav__item"><a href="#apostolat">Vie de l'Apostolat</a></li>
+      <li class="nav__item"><a href="#evenements">Événements</a></li>
+      <li class="nav__item"><a href="#carnet">Carnet familial</a></li>
+      <li class="nav__item"><a href="#icrsp">Vie de l'ICRSP</a></li>
+      <li class="nav__item"><a href="#textes">Textes et prières</a></li>
+      <li class="nav__item"><a href="#contacts">Contacts</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== -->
+  <!-- SECTION : ÉDITORIAL   -->
+  <!-- ===================== -->
+  <section id="editorial" class="section">
+    <h2 class="section-title">Éditorial</h2>
+    <!-- ÉDITORIAL (variable) — cookbook §5.1 :
+         h3.block-title (2e+ avec style="margin-top: 36px;"),
+         1er <p> en class="lettrine", citations en div.citation,
+         signature finale en p.auteur. -->
+  </section>
+
+  <!-- ===================== -->
+  <!-- SECTION : APOSTOLAT   -->
+  <!-- ===================== -->
+  <section id="apostolat" class="section">
+    <h2 class="section-title">Vie de l'Apostolat</h2>
+
+    <p class="block-subtitle">Horaires habituels pour l'année 2026 · <a href="https://icrspfrance.fr/apostolats/dijon" target="_blank">Consulter le calendrier en ligne</a></p>
+
+    <div class="horaires-grid">
+      <div class="bloc-horaires">
+        <h3 class="block-title">Basilique de la Maison natale Saint-Bernard</h3>
+        <p class="bloc-horaires__address">
+          <a href="https://maps.google.com/?q=Place+des+Feuillants,+21121+Fontaine-lès-Dijon" target="_blank">Place des Feuillants, 21121 Fontaine-lès-Dijon</a>
+        </p>
+        <div class="horaires-group">
+          <div class="horaires-group__label">Messes</div>
+          <div class="horaires-row"><span class="horaires-row__day">Dimanche et fêtes</span><span class="horaires-row__time">8h30 et 10h</span></div>
+          <div class="horaires-row"><span class="horaires-row__day">Vendredi</span><span class="horaires-row__time">18h30</span></div>
+          <div class="horaires-row"><span class="horaires-row__day">Samedi</span><span class="horaires-row__time">10h30</span></div>
+        </div>
+        <div class="horaires-group">
+          <div class="horaires-group__label">Confessions</div>
+          <div class="horaires-row"><span class="horaires-row__day">Vendredi</span><span class="horaires-row__time">19h15 – 20h</span></div>
+        </div>
+        <div class="horaires-group">
+          <div class="horaires-group__label">Adoration</div>
+          <div class="horaires-row"><span class="horaires-row__day">Vendredi</span><span class="horaires-row__time">19h15 – 20h</span></div>
+        </div>
+      </div>
+
+      <div class="bloc-horaires">
+        <h3 class="block-title">Chapelle Saint-André</h3>
+        <p class="bloc-horaires__address">
+          <a href="https://maps.google.com/?q=5+place+Saint-Michel,+21000+Dijon" target="_blank">5, place Saint-Michel, 21000 Dijon</a>
+        </p>
+        <div class="horaires-group">
+          <div class="horaires-group__label">Messes</div>
+          <div class="horaires-row"><span class="horaires-row__day">Mardi</span><span class="horaires-row__time">7h30</span></div>
+          <div class="horaires-row"><span class="horaires-row__day">Mercredi</span><span class="horaires-row__time">18h30</span></div>
+          <div class="horaires-row"><span class="horaires-row__day">Jeudi</span><span class="horaires-row__time">7h30</span></div>
+        </div>
+        <div class="horaires-group">
+          <div class="horaires-group__label">Confessions</div>
+          <div class="horaires-row"><span class="horaires-row__day">Mercredi</span><span class="horaires-row__time">16h – 18h</span></div>
+          <div class="horaires-row"><span class="horaires-row__day" style="font-size:12px; opacity:0.7;">à l'église Saint-Michel</span><span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== -->
+  <!-- SECTION : ÉVÉNEMENTS  -->
+  <!-- ===================== -->
+  <section id="evenements" class="section">
+    <h2 class="section-title">Événements</h2>
+    <!-- ÉVÉNEMENTS (variable) — cookbook §5.2 :
+         par événement, div.fiche-evenement > h3.block-title +
+         div.fiche-meta (📅 fiche-meta__date, 📍 fiche-meta__lieu) +
+         <p> + éventuel p.fiche-contact + éventuel a.btn.btn--primary. -->
+  </section>
+
+  <!-- ===================== -->
+  <!-- SECTION : CARNET      -->
+  <!-- ===================== -->
+  <section id="carnet" class="section">
+    <h2 class="section-title">Carnet familial</h2>
+    <!-- CARNET (variable) — cookbook §5.3 :
+         div.carnet-familial > carnet-section (label + content) séparées
+         par div.carnet-separator ✦. Rubriques : R.I.P. ✝, Mariages,
+         Fiançailles, Baptêmes. Noms en <strong>. -->
+  </section>
+
+  <!-- ===================== -->
+  <!-- SECTION : VIE ICRSP   -->
+  <!-- ===================== -->
+  <section id="icrsp" class="section">
+    <h2 class="section-title">Vie de l'ICRSP</h2>
+    <!-- VIE DE L'ICRSP (variable) — cookbook §5.4 :
+         div.fiche-evenement avec style="border-left-color: var(--color-accent);". -->
+  </section>
+
+  <!-- ===================== -->
+  <!-- SECTION : TEXTES      -->
+  <!-- ===================== -->
+  <section id="textes" class="section">
+    <h2 class="section-title">Textes et prières</h2>
+    <!-- TEXTES (variable) — cookbook §5.5 :
+         par texte, div.depliant > details.depliant-details > summary
+         (h3.block-title + p.block-subtitle + <p> d'amorce + div.depliant-toggle)
+         puis div.depliant-content. -->
+  </section>
+
+  <!-- ===================== -->
+  <!-- SECTION : CONTACTS    -->
+  <!-- ===================== -->
+  <section id="contacts" class="section">
+    <h2 class="section-title">Contacts &amp; responsabilités</h2>
+
+    <div class="annuaire-category">
+      <div class="annuaire-category__title">Liturgie</div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Servant de Messe</span>
+        <span class="annuaire-entry__person">Denis Jordan — <a href="tel:+33683163651">06 83 16 36 51</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Responsable des fleurs</span>
+        <span class="annuaire-entry__person">Fabiola — <a href="tel:+33676887692">06 76 88 76 92</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Maître de chœur</span>
+        <span class="annuaire-entry__person">François-Xavier Chevignard — <a href="tel:+33637417340">06 37 41 73 40</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Organiste</span>
+        <span class="annuaire-entry__person">Jean Prudhomme — <a href="tel:+33602280345">06 02 28 03 45</a></span>
+      </div>
+    </div>
+
+    <div class="annuaire-category">
+      <div class="annuaire-category__title">Foyers chrétiens</div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Frat</span>
+        <span class="annuaire-entry__person">Clotilde Denizot — <a href="tel:+33663831060">06 63 83 10 60</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Domus</span>
+        <span class="annuaire-entry__person">Clémence Prudhomme — <a href="tel:+33606824036">06 06 82 40 36</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">END</span>
+        <span class="annuaire-entry__person">Bénédicte — <a href="tel:+33665581564">06 65 58 15 64</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Saint Simon et Sainte Anne</span>
+        <span class="annuaire-entry__person">Marie-Chantal Giroux — <a href="tel:+33627083281">06 27 08 32 81</a></span>
+      </div>
+    </div>
+
+    <div class="annuaire-category">
+      <div class="annuaire-category__title">Événements &amp; pèlerinages</div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Pèlerinage de Chartres (Marcheurs)</span>
+        <span class="annuaire-entry__person">Paul Pissarra — <a href="tel:+33688908740">06 88 90 87 40</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Pèlerinage de Chartres (Ange Gardien)</span>
+        <span class="annuaire-entry__person">Marie-Chantal Giroux — <a href="tel:+33627083281">06 27 08 32 81</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Maraude</span>
+        <span class="annuaire-entry__person">Déborah Forjot — <a href="tel:+33610582462">06 10 58 24 62</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Pèlerinage nocturne de Beaune</span>
+        <span class="annuaire-entry__person">Mathilde — <a href="tel:+33652551938">06 52 55 19 38</a></span>
+      </div>
+    </div>
+
+    <div class="annuaire-category">
+      <div class="annuaire-category__title">Administration</div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Panier du Chanoine</span>
+        <span class="annuaire-entry__person">Ségolène Schmitz — <a href="tel:+33651532336">06 51 53 23 36</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Secrétariat</span>
+        <span class="annuaire-entry__person">Mathilde Frèrejacques — <a href="tel:+33610646886">06 10 64 68 86</a></span>
+      </div>
+    </div>
+  </section>
+
+</div><!-- .bulletin -->
+
+<!-- ===================== -->
+<!-- FOOTER                -->
+<!-- ===================== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__name">Chanoine Thibaut d'Aviau de Ternay</div>
+    <div class="footer__role">
+      Responsable et Desservant de l'ICRSP à Dijon<br>
+      Vicaire de la Paroisse Saint-Michel de Dijon
+    </div>
+    <ul class="footer__links">
+      <li><span class="fi">📍</span> 41 rue Saumaise – 21 000 Dijon</li>
+      <li><span class="fi">📞</span> <a href="tel:+33672771506">06 72 77 15 06</a></li>
+      <li><span class="fi">✉</span> <a href="mailto:chn.deternay@icrsp.org">chn.deternay@icrsp.org</a></li>
+      <li><span class="fi">🌐</span> <a href="https://icrspfrance.fr/apostolats/dijon" target="_blank">icrspfrance.fr/apostolats/dijon</a></li>
+    </ul>
+    <hr class="footer__separator">
+    <div class="footer__institution">
+      Apostolat de l'Institut du Christ Roi Souverain Prêtre<br>
+      dans l'Archidiocèse de Dijon
+    </div>
+    <div class="footer__devise">Veritatem Facientes in Caritate</div>
+    <div class="footer__download">
+      <a href="bulletins/bulletin-icrsp-dijon-{{MOIS-SLUG}}.pdf" download>Télécharger ce bulletin en PDF</a>
+      <span style="opacity:0.3; margin:0 8px;">·</span>
+      <a href="archives.html">Voir les anciens bulletins</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Bouton retour en haut -->
+<a href="#top" class="back-to-top" aria-label="Retour en haut">↑</a>
+
+<script>
+// Bouton retour en haut - apparaît après scroll
+const btn = document.querySelector('.back-to-top');
+let ticking = false;
+window.addEventListener('scroll', function() {
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      if (window.scrollY > 600) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+</script>
+</body>
+</html>

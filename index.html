@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bulletin ICRSP — Dijon n°1 — Mai 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+/* ============================== */
+/* DESIGN TOKENS                  */
+/* ============================== */
+:root {
+  --color-primary: #1B3A6B;
+  --color-accent: #C49A3C;
+  --color-action: #A63B32;
+  --color-text: #1A1A1A;
+  --color-text-secondary: #5C5C5C;
+  --color-bg: #FFFFFF;
+  --color-bg-card: #F5F2EC;
+  --color-border: #D4CFC7;
+
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Serif 4', 'Source Serif Pro', Georgia, serif;
+  --font-ui: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  --max-width: 680px;
+  --space-section: 56px;
+  --space-block: 32px;
+  --space-paragraph: 16px;
+  --space-card-padding: 20px;
+  --space-page-padding: 18px;
+
+  --radius-card: 8px;
+  --radius-img: 5px;
+  --radius-btn: 6px;
+  --tap-target: 44px;
+}
+
+/* ============================== */
+/* RESET & BASE                   */
+/* ============================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-action);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+a:hover, a:active { opacity: 0.8; text-decoration: underline; }
+
+[id] { scroll-margin-top: 20px; }
+
+/* ============================== */
+/* LAYOUT                         */
+/* ============================== */
+.bulletin {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-page-padding);
+}
+
+.section {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+  border-bottom: 1px solid var(--color-border);
+}
+.section:last-of-type { border-bottom: none; }
+
+/* ============================== */
+/* HEADER                         */
+/* ============================== */
+.header {
+  text-align: center;
+  padding: 28px 0 20px;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.header__blason {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.header__issue {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.header__motto {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-style: italic;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.05em;
+}
+
+/* ============================== */
+/* SOMMAIRE / NAV                 */
+/* ============================== */
+.nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav__item a {
+  display: block;
+  padding: 10px 12px;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-primary);
+  border-radius: 6px;
+  transition: background 0.15s;
+  min-height: var(--tap-target);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.nav__item a:hover {
+  background: var(--color-bg-card);
+  text-decoration: none;
+  opacity: 1;
+}
+
+/* ============================== */
+/* TYPOGRAPHY                     */
+/* ============================== */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.block-title {
+  font-family: var(--font-heading);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.block-subtitle {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+p { margin-bottom: var(--space-paragraph); }
+p:last-child { margin-bottom: 0; }
+
+.auteur {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  text-align: right;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+/* Lettrine */
+.lettrine::first-letter {
+  font-family: var(--font-heading);
+  font-size: 3.4em;
+  float: left;
+  line-height: 0.8;
+  margin-right: 8px;
+  margin-top: 4px;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* Citation */
+.citation {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 20px;
+  margin: 24px 0;
+  font-style: italic;
+}
+.citation-source {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  font-style: normal;
+  display: block;
+  margin-top: 8px;
+}
+
+/* ============================== */
+/* FICHE ÉVÉNEMENT                */
+/* ============================== */
+.fiche-evenement {
+  background: var(--color-bg-card);
+  border-left: 4px solid var(--color-action);
+  border-radius: var(--radius-card);
+  padding: var(--space-card-padding);
+  margin-bottom: var(--space-block);
+}
+.fiche-evenement:last-child { margin-bottom: 0; }
+
+.fiche-evenement .block-title {
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+.fiche-meta {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.fiche-meta__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.fiche-meta__icon {
+  flex-shrink: 0;
+  width: 18px;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+.fiche-meta__date {
+  color: var(--color-action);
+  font-weight: 700;
+}
+.fiche-meta__lieu a {
+  color: var(--color-action);
+}
+
+.fiche-evenement p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.fiche-evenement .fiche-contact {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  margin-top: 14px;
+  color: var(--color-text-secondary);
+}
+
+/* Boutons */
+.btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px 24px;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 700;
+  min-height: var(--tap-target);
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.1s;
+  margin-top: 16px;
+}
+.btn:hover { opacity: 0.9; text-decoration: none; transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn--primary {
+  background: var(--color-action);
+  color: #fff;
+}
+.btn--secondary {
+  background: transparent;
+  color: var(--color-action);
+  border: 1.5px solid var(--color-action);
+}
+
+/* ============================== */
+/* BLOC HORAIRES                  */
+/* ============================== */
+.bloc-horaires {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-card);
+  padding: var(--space-card-padding);
+  margin-bottom: var(--space-block);
+  border-top: 3px solid var(--color-accent);
+}
+.bloc-horaires:last-child { margin-bottom: 0; }
+
+.bloc-horaires .block-title {
+  font-size: 19px;
+  color: var(--color-primary);
+}
+
+.bloc-horaires__address {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin-bottom: 16px;
+}
+.bloc-horaires__address a { color: var(--color-action); }
+
+.horaires-group {
+  margin-bottom: 14px;
+}
+.horaires-group:last-child { margin-bottom: 0; }
+
+.horaires-group__label {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+.horaires-row {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  color: var(--color-text);
+}
+.horaires-row__day { color: var(--color-text-secondary); }
+.horaires-row__time { font-weight: 500; }
+
+/* ============================== */
+/* CARNET FAMILIAL                */
+/* ============================== */
+.carnet-familial {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 28px var(--space-card-padding);
+  text-align: center;
+}
+
+.carnet-familial__title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-variant: small-caps;
+  margin-bottom: 24px;
+}
+
+.carnet-section {
+  margin-bottom: 20px;
+}
+.carnet-section:last-child { margin-bottom: 0; }
+
+.carnet-section__label {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.carnet-section__content {
+  font-size: 16px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.carnet-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: var(--color-accent);
+  font-size: 12px;
+}
+.carnet-separator::before,
+.carnet-separator::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+/* ============================== */
+/* ANNUAIRE                       */
+/* ============================== */
+.annuaire-category {
+  margin-bottom: 28px;
+}
+.annuaire-category:last-child { margin-bottom: 0; }
+
+.annuaire-category__title {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.annuaire-entry {
+  margin-bottom: 10px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.annuaire-entry__role {
+  font-weight: 700;
+  color: var(--color-text);
+  display: block;
+}
+.annuaire-entry__person {
+  color: var(--color-text-secondary);
+}
+.annuaire-entry__person a {
+  color: var(--color-action);
+  white-space: nowrap;
+}
+
+/* ============================== */
+/* TEXTE DÉPLIANT                 */
+/* ============================== */
+.depliant {
+  margin-bottom: var(--space-block);
+  padding-bottom: var(--space-block);
+  border-bottom: 1px dashed var(--color-border);
+}
+.depliant:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+details.depliant-details {
+  cursor: default;
+}
+
+details.depliant-details summary {
+  cursor: pointer;
+  list-style: none;
+  outline: none;
+}
+details.depliant-details summary::-webkit-details-marker { display: none; }
+details.depliant-details summary::marker { display: none; content: ''; }
+
+.depliant-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-top: 12px;
+  padding: 8px 0;
+  min-height: var(--tap-target);
+}
+.depliant-toggle__chevron {
+  transition: transform 0.2s;
+  font-size: 12px;
+}
+details[open] .depliant-toggle__chevron {
+  transform: rotate(180deg);
+}
+
+.depliant-content {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ============================== */
+/* FOOTER                         */
+/* ============================== */
+.footer {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 36px var(--space-page-padding);
+  margin-top: var(--space-section);
+}
+
+.footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer__name {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.footer__role {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  opacity: 0.75;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.footer__links {
+  list-style: none;
+  margin-bottom: 24px;
+}
+.footer__links li {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer__links li .fi { 
+  width: 16px; 
+  text-align: center; 
+  opacity: 0.6; 
+  flex-shrink: 0;
+}
+.footer__links a {
+  color: var(--color-accent);
+}
+.footer__links a:hover { color: #fff; }
+
+.footer__separator {
+  border: none;
+  border-top: 1px solid var(--color-accent);
+  opacity: 0.4;
+  margin: 24px 0;
+}
+
+.footer__institution {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  opacity: 0.6;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.footer__devise {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-accent);
+  text-align: center;
+}
+
+.footer__download {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.footer__download a {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+}
+.footer__download a:hover { color: #fff; }
+
+/* ============================== */
+/* BOUTON RETOUR EN HAUT          */
+/* ============================== */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.2s;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+.back-to-top:hover { transform: translateY(-2px); opacity: 0.9 !important; text-decoration: none; }
+.back-to-top.visible { opacity: 0.7; pointer-events: auto; }
+
+/* ============================== */
+/* RESPONSIVE DESKTOP             */
+/* ============================== */
+@media (min-width: 640px) {
+  body { font-size: 18px; }
+  .header__title { font-size: 30px; }
+  .section-title { font-size: 26px; }
+  .block-title { font-size: 22px; }
+  .nav__list { flex-direction: row; flex-wrap: wrap; gap: 0; }
+  .nav__item a { padding: 8px 14px; font-size: 14px; }
+  .horaires-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .horaires-grid .bloc-horaires { margin-bottom: 0; }
+}
+
+/* ============================== */
+/* PRINT (pour génération PDF)    */
+/* ============================== */
+@media print {
+  .nav, .back-to-top, .btn { display: none; }
+  details[open] > summary .depliant-toggle { display: none; }
+  details { display: block !important; }
+  details > * { display: block !important; }
+  .section { break-inside: avoid; }
+  .footer { break-inside: avoid; }
+  body { font-size: 11pt; }
+}
+</style>
+</head>
+<body id="top">
+
+<!-- ===================== -->
+<!-- HEADER                -->
+<!-- ===================== -->
+<div class="bulletin">
+  <header class="header">
+    <div class="header__blason"><img src="image.png" alt="Blason ICRSP" style="width:100%;height:100%;object-fit:contain;border-radius:50%;"></div>
+    <h1 class="header__title">Bulletin ICRSP — Dijon</h1>
+    <div class="header__issue">n°1 · mai 2026</div>
+    <div class="header__motto">Sub Oculis Christi Regis</div>
+  </header>
+
+  <!-- ===================== -->
+  <!-- SOMMAIRE              -->
+  <!-- ===================== -->
+  <nav class="nav" aria-label="Sommaire">
+    <ul class="nav__list">
+      <li class="nav__item"><a href="#editorial">Éditorial</a></li>
+      <li class="nav__item"><a href="#apostolat">Vie de l'Apostolat</a></li>
+      <li class="nav__item"><a href="#evenements">Événements</a></li>
+      <li class="nav__item"><a href="#carnet">Carnet familial</a></li>
+      <li class="nav__item"><a href="#icrsp">Vie de l'ICRSP</a></li>
+      <li class="nav__item"><a href="#textes">Textes et prières</a></li>
+      <li class="nav__item"><a href="#contacts">Contacts</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== -->
+  <!-- SECTION : ÉDITORIAL   -->
+  <!-- ===================== -->
+  <section id="editorial" class="section">
+    <h2 class="section-title">Éditorial</h2>
+
+    <h3 class="block-title">Mai, mois de Notre-Dame du bel amour</h3>
+
+    <p class="lettrine">Le mois de mai avance, doucement, comme une aurore qui éclaire nos âmes. La terre s'éveille, parée de fleurs fragiles, échos de la beauté céleste. En ce temps privilégié, l'Église tourne son regard vers Marie, la Mère de toute grâce, celle qui tient dans ses mains le secret de la vraie joie.</p>
+
+    <p>Marie, douce étoile du matin, éclaire le chemin de nos cœurs. Elle veille sur chacun de nous, comme une mère penchée sur son enfant, attentive aux moindres élans de notre vie intérieure. Sous son regard, nos pas deviennent plus sûrs, nos combats plus paisibles, nos espérances plus solides.</p>
+
+    <div class="citation">
+      <p>« La Sainte Vierge est l'image vivante de la charité divine, qui se donne entièrement sans jamais se lasser. »</p>
+      <span class="citation-source">Saint François de Sales</span>
+    </div>
+
+    <p>Que ce mois de mai soit pour nous un temps de renaissance spirituelle, un moment où, à l'exemple de Marie, nous apprenons à dire « oui » à l'Amour, à accueillir le Ressuscité dans chaque recoin de notre être.</p>
+
+    <h3 class="block-title" style="margin-top: 36px;">Saint Joseph, patron des travailleurs&nbsp;: un modèle pour nos vies</h3>
+
+    <p>Le mois de mai s'ouvre sous la protection de saint Joseph, patron des travailleurs et des artisans. L'Église contemple en lui l'homme juste, silencieux, fidèle, qui a sanctifié le travail humain en portant dans ses mains l'ouvrage quotidien.</p>
+
+    <p>Son labeur humble et caché devient pour nous une école&nbsp;: travailler avec droiture, offrir nos efforts à Dieu, et laisser la grâce transformer nos tâches ordinaires en actes d'amour.</p>
+
+    <p>À Nazareth, Joseph a façonné le bois&nbsp;; Marie a gardé la Parole&nbsp;; Jésus a grandi dans cette atmosphère de simplicité et de sainteté. Que nos foyers deviennent, à leur image, des lieux où Dieu trouve sa joie à demeurer.</p>
+
+    <h3 class="block-title" style="margin-top: 36px;">Le chapelet&nbsp;: une contemplation du Christ avec Marie</h3>
+
+    <p>En ce mois qui lui est consacré, l'Église nous invite à reprendre avec ferveur le chapelet. Cette prière, si simple en apparence, est en réalité une voie sûre de contemplation, profondément enracinée dans la Tradition.</p>
+
+    <div class="citation">
+      <p>« Le chapelet est une prière au cœur christologique. »</p>
+      <span class="citation-source">Saint Jean-Paul II</span>
+    </div>
+
+    <p>Chaque mystère est une page de l'Évangile que Marie nous aide à méditer&nbsp;: les mystères joyeux nous conduisent à l'Incarnation&nbsp;; les mystères lumineux manifestent la révélation progressive du Royaume&nbsp;; les mystères douloureux nous placent devant l'acte rédempteur par excellence&nbsp;; les mystères glorieux nous ouvrent à la victoire du Ressuscité.</p>
+
+    <p>Ainsi, le chapelet est une catéchèse vivante, une synthèse doctrinale de l'Évangile, une initiation progressive au mystère du Christ sous la conduite maternelle de Marie.</p>
+
+    <h3 class="block-title" style="margin-top: 36px;">L'Ascension&nbsp;: le Christ nous ouvre le Ciel</h3>
+
+    <p>Le 14 mai, nous célébrerons l'Ascension du Seigneur. Le Christ, vrai Dieu et vrai homme, entre dans la gloire du Père et nous y entraîne avec lui. Il ne s'éloigne pas&nbsp;: il inaugure pour nous la voie du Ciel, il demeure présent dans son Église, et il nous confie la mission d'être ses témoins « jusqu'aux extrémités de la terre ».</p>
+
+    <p>Marie, qui a vu son Fils monter vers le Père, demeure pour nous la Mère de l'Espérance. Elle nous apprend à vivre tournés vers les réalités d'en haut, sans fuir les responsabilités de la terre.</p>
+
+    <h3 class="block-title" style="margin-top: 36px;">La Pentecôte&nbsp;: l'Esprit Saint embrase l'Église</h3>
+
+    <p>Le 24 mai, nous célébrerons la Pentecôte, accomplissement de la promesse du Christ. L'Esprit Saint descend sur l'Église naissante, la fortifie, l'illumine, la pousse vers la mission. Il est le Souffle qui renouvelle la face de la terre, la Force qui transforme les cœurs, la Lumière qui éclaire nos choix.</p>
+
+    <p>Marie, présente au Cénacle, demeure la Mère de l'Église. Elle nous apprend à accueillir l'Esprit avec docilité, à nous laisser conduire par lui, à devenir des témoins ardents de la charité divine.</p>
+
+    <h3 class="block-title" style="margin-top: 36px;">Un mois pour fleurir nos âmes</h3>
+
+    <p>Mai est un souffle, une invitation à vivre pleinement. Prions le chapelet dans l'intimité de nos foyers. Fleurissons nos autels avec la simplicité des champs. Offrons nos louanges, non pas comme un murmure timide, mais comme une clameur d'amour, un écho de la Résurrection.</p>
+
+    <p>Que Marie nous apprenne à contempler, à aimer, à avancer dans la lumière qui ne s'éteint jamais. Que saint Joseph sanctifie notre travail. Que l'Ascension élève nos regards. Que la Pentecôte embrase nos cœurs.</p>
+
+    <p>Et dans ce chemin, humblement, nous avançons. Avec Marie, nous chantons la joie de Pâques. Avec elle, nous portons la vie au monde. Avec elle, nous embrassons la mission qui nous est confiée&nbsp;: témoigner de l'Amour qui a vaincu la mort.</p>
+
+    <p class="auteur">Chanoine Thibaut de Ternay</p>
+  </section>
+
+  <!-- ===================== -->
+  <!-- SECTION : APOSTOLAT   -->
+  <!-- ===================== -->
+  <section id="apostolat" class="section">
+    <h2 class="section-title">Vie de l'Apostolat</h2>
+
+    <p class="block-subtitle">Horaires habituels pour l'année 2026 · <a href="https://icrspfrance.fr/apostolats/dijon" target="_blank">Consulter le calendrier en ligne</a></p>
+
+    <div class="horaires-grid">
+      <div class="bloc-horaires">
+        <h3 class="block-title">Basilique de la Maison natale Saint-Bernard</h3>
+        <p class="bloc-horaires__address">
+          <a href="https://maps.google.com/?q=Place+des+Feuillants,+21121+Fontaine-lès-Dijon" target="_blank">Place des Feuillants, 21121 Fontaine-lès-Dijon</a>
+        </p>
+        <div class="horaires-group">
+          <div class="horaires-group__label">Messes</div>
+          <div class="horaires-row"><span class="horaires-row__day">Dimanche et fêtes</span><span class="horaires-row__time">8h30 et 10h</span></div>
+          <div class="horaires-row"><span class="horaires-row__day">Vendredi</span><span class="horaires-row__time">18h30</span></div>
+          <div class="horaires-row"><span class="horaires-row__day">Samedi</span><span class="horaires-row__time">10h30</span></div>
+        </div>
+        <div class="horaires-group">
+          <div class="horaires-group__label">Confessions</div>
+          <div class="horaires-row"><span class="horaires-row__day">Vendredi</span><span class="horaires-row__time">19h15 – 20h</span></div>
+        </div>
+        <div class="horaires-group">
+          <div class="horaires-group__label">Adoration</div>
+          <div class="horaires-row"><span class="horaires-row__day">Vendredi</span><span class="horaires-row__time">19h15 – 20h</span></div>
+        </div>
+      </div>
+
+      <div class="bloc-horaires">
+        <h3 class="block-title">Chapelle Saint-André</h3>
+        <p class="bloc-horaires__address">
+          <a href="https://maps.google.com/?q=5+place+Saint-Michel,+21000+Dijon" target="_blank">5, place Saint-Michel, 21000 Dijon</a>
+        </p>
+        <div class="horaires-group">
+          <div class="horaires-group__label">Messes</div>
+          <div class="horaires-row"><span class="horaires-row__day">Mardi</span><span class="horaires-row__time">7h30</span></div>
+          <div class="horaires-row"><span class="horaires-row__day">Mercredi</span><span class="horaires-row__time">18h30</span></div>
+          <div class="horaires-row"><span class="horaires-row__day">Jeudi</span><span class="horaires-row__time">7h30</span></div>
+        </div>
+        <div class="horaires-group">
+          <div class="horaires-group__label">Confessions</div>
+          <div class="horaires-row"><span class="horaires-row__day">Mercredi</span><span class="horaires-row__time">16h – 18h</span></div>
+          <div class="horaires-row"><span class="horaires-row__day" style="font-size:12px; opacity:0.7;">à l'église Saint-Michel</span><span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== -->
+  <!-- SECTION : ÉVÉNEMENTS  -->
+  <!-- ===================== -->
+  <section id="evenements" class="section">
+    <h2 class="section-title">Événements</h2>
+
+    <!-- Événement 1 -->
+    <div class="fiche-evenement">
+      <h3 class="block-title">Soirée ciné-conférence — Dérèglement bioéthique</h3>
+      <div class="fiche-meta">
+        <div class="fiche-meta__row">
+          <span class="fiche-meta__icon">📅</span>
+          <span class="fiche-meta__date">Mercredi 6 mai 2026, 20h30</span>
+        </div>
+        <div class="fiche-meta__row">
+          <span class="fiche-meta__icon">📍</span>
+          <span class="fiche-meta__lieu"><a href="https://maps.google.com/?q=12+Boulevard+Alexandre+1er+de+Yougoslavie,+21000+Dijon" target="_blank">Salle Liger-Belair — 12 Bvd Alexandre 1er, Dijon</a></span>
+        </div>
+      </div>
+      <p>Euthanasie, eugénisme, GPA, PMA, tri embryonnaire&nbsp;: la Fondation Jérôme Lejeune vous invite à une soirée d'information pour comprendre les enjeux de la 4e révision des lois de bioéthique et vous donner des outils pour agir.</p>
+      <p class="fiche-contact">Table ronde avec Christine Mansilla (rédactrice en chef Généthique) et Bertrand Mathieu (professeur de droit public).</p>
+    </div>
+
+    <!-- Événement 2 -->
+    <div class="fiche-evenement">
+      <h3 class="block-title">Pèlerinage de Pentecôte — Notre-Dame de Chrétienté</h3>
+      <div class="fiche-meta">
+        <div class="fiche-meta__row">
+          <span class="fiche-meta__icon">📅</span>
+          <span class="fiche-meta__date">23, 24 et 25 mai 2026</span>
+        </div>
+        <div class="fiche-meta__row">
+          <span class="fiche-meta__icon">📍</span>
+          <span class="fiche-meta__lieu">De Paris à Notre-Dame de Chartres</span>
+        </div>
+      </div>
+      <p>44e pèlerinage de Pentecôte. « Vous serez mes témoins jusqu'aux extrémités de la terre. »</p>
+      <p class="fiche-contact">
+        Chapitre des Marcheurs&nbsp;: <a href="tel:+33688908740">Paul Pissarra — 06 88 90 87 40</a><br>
+        Chapitre Ange Gardien&nbsp;: <a href="tel:+33627083281">Marie-Chantal Giroux — 06 27 08 32 81</a>
+      </p>
+      <a href="https://nd-chretiente.com" target="_blank" class="btn btn--primary">S'inscrire sur nd-chretiente.com →</a>
+    </div>
+
+    <!-- Événement 3 -->
+    <div class="fiche-evenement">
+      <h3 class="block-title">Pèlerinage bourguignon — Première édition</h3>
+      <div class="fiche-meta">
+        <div class="fiche-meta__row">
+          <span class="fiche-meta__icon">📅</span>
+          <span class="fiche-meta__date">22 au 25 mai 2026 (week-end de Pentecôte)</span>
+        </div>
+        <div class="fiche-meta__row">
+          <span class="fiche-meta__icon">📍</span>
+          <span class="fiche-meta__lieu">Vers le sanctuaire de Vézelay</span>
+        </div>
+      </div>
+      <p>Les quatre diocèses de la province de Bourgogne organisent un pèlerinage commun. Marche, prières, enseignements, témoignages et temps fraternels. Ouvert à toute personne majeure, prête à marcher 20&nbsp;km/jour et dormir sous tente.</p>
+      <a href="https://pelerinagebourguignon.fr/" target="_blank" class="btn btn--primary">En savoir plus →</a>
+    </div>
+
+    <!-- Événement 4 -->
+    <div class="fiche-evenement">
+      <h3 class="block-title">Soirée pour les hommes de 40 à 63 ans</h3>
+      <div class="fiche-meta">
+        <div class="fiche-meta__row">
+          <span class="fiche-meta__icon">📅</span>
+          <span class="fiche-meta__date">Mardi 2 juin 2026, 19h</span>
+        </div>
+        <div class="fiche-meta__row">
+          <span class="fiche-meta__icon">📍</span>
+          <span class="fiche-meta__lieu"><a href="https://maps.google.com/?q=5+place+Saint-Michel,+21000+Dijon" target="_blank">Chapelle Saint-André, 5 place Saint-Michel</a></span>
+        </div>
+      </div>
+      <p>Chapelet à 19h à la chapelle, suivi d'un verre à <a href="https://maps.google.com/?q=57+rue+Vannerie,+Dijon" target="_blank">« La cave Se Rebiffe » (57 rue Vannerie)</a>.</p>
+      <p class="fiche-contact">Inscription&nbsp;: <a href="tel:+33672771506">Chanoine de Ternay — 06 72 77 15 06</a></p>
+    </div>
+
+    <!-- Événement 5 -->
+    <div class="fiche-evenement">
+      <h3 class="block-title">Marche pour les vocations</h3>
+      <div class="fiche-meta">
+        <div class="fiche-meta__row">
+          <span class="fiche-meta__icon">📅</span>
+          <span class="fiche-meta__date">Samedi 25 avril 2026, 9h30 – 17h</span>
+        </div>
+        <div class="fiche-meta__row">
+          <span class="fiche-meta__icon">📍</span>
+          <span class="fiche-meta__lieu"><a href="https://maps.google.com/?q=Épagny+Côte-d'Or" target="_blank">Boucle au départ d'Épagny</a></span>
+        </div>
+      </div>
+      <p>8&nbsp;km de marche et prière pour les vocations du diocèse, en présence de Monseigneur Hérouard. Témoignages, enseignements, temps de fraternité. Tout le monde est bienvenu.</p>
+      <a href="https://w.enoria.link/inscription-marche-pour-les-vocations-2026" target="_blank" class="btn btn--primary">S'inscrire →</a>
+    </div>
+
+    <!-- Note : Fraternité Missionnaire des Cités -->
+    <div class="fiche-evenement" style="border-left-color: var(--color-primary);">
+      <h3 class="block-title">Fraternité Missionnaire des Cités</h3>
+      <p>Structure lancée en 2022 pour soutenir les prêtres des quartiers populaires. Échange de bonnes pratiques, accompagnement concret, aide aux prêtres.</p>
+      <a href="https://fmcfraternite.org/" target="_blank" class="btn btn--secondary">En savoir plus →</a>
+    </div>
+  </section>
+
+  <!-- ===================== -->
+  <!-- SECTION : CARNET      -->
+  <!-- ===================== -->
+  <section id="carnet" class="section">
+    <h2 class="section-title">Carnet familial</h2>
+
+    <div class="carnet-familial">
+      <div class="carnet-section">
+        <div class="carnet-section__label">✝ R.I.P.</div>
+        <div class="carnet-section__content">
+          <p>Le 14 avril 2026, est entrée dans la Maison du Père&nbsp;: <strong>Marie-Alice Herlequin</strong>, née Oechslin, munie des sacrements de l'Église. Les obsèques ont été célébrées le 24 avril à la Visitation de Dijon.</p>
+        </div>
+      </div>
+
+      <div class="carnet-separator">✦</div>
+
+      <div class="carnet-section">
+        <div class="carnet-section__label">Mariages</div>
+        <div class="carnet-section__content">
+          <p><strong>Godefroy Robert du Boislouveau</strong> avec <strong>Constance Sabatier</strong>, le 25 avril 2026 en l'église Notre-Dame de Beaune.</p>
+          <p><strong>Thibault Barba</strong> avec <strong>Manon Duclos</strong>, le 16 mai 2026 en l'église Saint-Germain de Cogny.</p>
+        </div>
+      </div>
+
+      <div class="carnet-separator">✦</div>
+
+      <div class="carnet-section">
+        <div class="carnet-section__label">Fiançailles</div>
+        <div class="carnet-section__content">
+          <p><strong>Paul Pissarra</strong> avec <strong>Mathilde Rivat</strong>, le 2 mai 2026 à la Basilique de la Maison Natale de Saint-Bernard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== -->
+  <!-- SECTION : VIE ICRSP   -->
+  <!-- ===================== -->
+  <section id="icrsp" class="section">
+    <h2 class="section-title">Vie de l'ICRSP</h2>
+
+    <div class="fiche-evenement" style="border-left-color: var(--color-accent);">
+      <h3 class="block-title">Retraite Salésienne — Ascension 2026</h3>
+      <div class="fiche-meta">
+        <div class="fiche-meta__row">
+          <span class="fiche-meta__icon">📅</span>
+          <span class="fiche-meta__date">13 au 17 mai 2026</span>
+        </div>
+        <div class="fiche-meta__row">
+          <span class="fiche-meta__icon">📍</span>
+          <span class="fiche-meta__lieu">Maison du Cœur Eucharistique, Les Côtes, 2340 Le Noirmont (Suisse)</span>
+        </div>
+      </div>
+      <p>« L'union à Dieu à l'école de saint François de Sales. » Pour tous à partir de 16 ans. Prédicateurs&nbsp;: chanoines Adrien Mesureur et Thibault de Ternay (ICRSP). Participation&nbsp;: CHF 220. Accès en train (Belfort TGV) ou en voiture.</p>
+      <p class="fiche-contact">Renseignements&nbsp;: <a href="mailto:retraites@icrspfrance.fr">retraites@icrspfrance.fr</a> · <a href="https://icrspfrance.fr/retraites" target="_blank">icrspfrance.fr/retraites</a></p>
+    </div>
+
+    <div class="fiche-evenement" style="border-left-color: var(--color-accent);">
+      <h3 class="block-title">Week-end pour fiancés — Préparation au mariage</h3>
+      <div class="fiche-meta">
+        <div class="fiche-meta__row">
+          <span class="fiche-meta__icon">📅</span>
+          <span class="fiche-meta__date">8, 9 et 10 mai 2026</span>
+        </div>
+        <div class="fiche-meta__row">
+          <span class="fiche-meta__icon">📍</span>
+          <span class="fiche-meta__lieu">Maison Notre-Dame-de-Bonne-Délivrance, Loisy (60950)</span>
+        </div>
+      </div>
+      <p>Formation pour fiancés et pré-fiancés. Prédications, interventions et témoignages de couples chrétiens. Accès en train (RER D) ou en voiture.</p>
+      <p class="fiche-contact">Inscriptions&nbsp;: <a href="mailto:retraites@icrsp.org">retraites@icrsp.org</a> · <a href="https://icrspfrance.fr/retraites" target="_blank">icrspfrance.fr/retraites</a></p>
+    </div>
+
+    <div class="fiche-evenement" style="border-left-color: var(--color-accent);">
+      <h3 class="block-title">Camps et colonies — Été 2026</h3>
+      <p>Garçons 8–12 ans, filles 8–12 ans, filles 10–17 ans, garçons 12–17 ans. Du 10 au 27 juillet 2026 selon les colonies. À partir de 260&nbsp;€.</p>
+      <p class="fiche-contact" style="font-style: italic; font-size: 13px;">Nul ne doit être empêché de participer à nos activités par des difficultés financières.</p>
+      <a href="https://icrspfrance.fr/colonies" target="_blank" class="btn btn--primary">Renseignements et inscriptions →</a>
+    </div>
+  </section>
+
+  <!-- ===================== -->
+  <!-- SECTION : TEXTES      -->
+  <!-- ===================== -->
+  <section id="textes" class="section">
+    <h2 class="section-title">Textes et prières</h2>
+
+    <!-- Texte 1 : Mois de Marie -->
+    <div class="depliant">
+      <details class="depliant-details">
+        <summary>
+          <h3 class="block-title">Mai, Mois de Marie</h3>
+          <p class="block-subtitle">Extraits des « Heures Catholiques d'Ars »</p>
+          <p>C'est à Florence, capitale de la Toscane en Italie, que fut fondée la dévotion du Mois de Marie. Les exercices du mois de mai y commencèrent dans la magnifique église de Sainte-Marie-des-Fleurs…</p>
+          <div class="depliant-toggle">Lire la suite <span class="depliant-toggle__chevron">▾</span></div>
+        </summary>
+        <div class="depliant-content">
+          <p>Voici la pratique que l'on peut suivre pour bien faire les exercices de ce Mois de Marie&nbsp;:</p>
+          <p>1° Si l'on n'a pas la facilité d'aller tous les jours au pied d'un autel de la Sainte Vierge, il faut, la veille ou l'avant-veille du 1er mai, choisir le lieu le plus convenable de la maison. On orne de son mieux un endroit pour y placer l'image ou la statue de Marie.</p>
+          <p>2° On se propose d'honorer Marie pendant le mois de mai avec un zèle particulier&nbsp;: on détermine quelle Vertu de la Sainte Vierge on veut plus spécialement imiter, quelle Grâce particulière on veut obtenir, quel péché ou défaut on veut spécialement éviter.</p>
+          <p>3° Chaque jour à son réveil et de temps en temps pendant la journée, on offre ses actions à Marie, et on ne manque pas de venir réciter quelque Prière devant l'image ou la statue préparée pour le culte du Mois de Marie&nbsp;; on termine ce mois de mai par une Communion fervente et une Consécration à la Très Sainte Vierge Marie.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- Texte 2 : Prière de consécration -->
+    <div class="depliant">
+      <details class="depliant-details">
+        <summary>
+          <h3 class="block-title">Prière de Consécration à la Très Sainte Vierge Marie</h3>
+          <p class="block-subtitle">Sœur Benigna Consolata Ferrero (1885-1916)</p>
+          <p>« Très douce et Très aimable Vierge Marie, Fille très aimée du divin Père éternel, Mère très tendre du divin Fils éternel, Épouse très sainte du divin Esprit éternel, je viens à Vous, ô ma très aimante Mère, pour me consacrer toute à Vous… »</p>
+          <div class="depliant-toggle">Lire la prière complète <span class="depliant-toggle__chevron">▾</span></div>
+        </summary>
+        <div class="depliant-content">
+          <p style="font-style: italic;">« Très douce et Très aimable Vierge Marie, Fille très aimée du divin Père éternel, Mère très tendre du divin Fils éternel, Épouse très sainte du divin Esprit éternel, je viens à Vous, ô ma très aimante Mère, pour me consacrer toute à Vous. Vous êtes la toute Pure, la toute Belle&nbsp;; Vous êtes l'Immaculée, et moi, je ne suis que misère, que péché, qu'inclination au mal&nbsp;! Vous, ô Marie, Vous avez toujours fait les délices de la Très Sainte Trinité&nbsp;; Vous avez ravi le Cœur de Dieu, votre Père, votre Époux, par la blancheur immaculée de Votre âme toute sainte. Ô Mère très compatissante, tournez un regard de pitié vers cette pauvre âme en butte aux plus mauvaises tentations, et mettez en fuite, par votre Puissance, l'infernal ennemi. Au moment de ses redoutables assauts, j'irai me réfugier dans votre Cœur Immaculé, et Vous, ô très miséricordieuse Reine des Vierges, conservez pur mon lys et présentez-le Vous-même à Jésus. Ma tendre Mère, je Vous attends à l'heure de ma mort&nbsp;; dès à présent, je Vous remercie, et je Vous prie de tout garder en moi, afin que tout plaise à Jésus. Merci, ô Marie&nbsp;! »</p>
+          <p>Ainsi soit-il.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- Texte 3 : Saint Joseph -->
+    <div class="depliant">
+      <details class="depliant-details">
+        <summary>
+          <h3 class="block-title">Saint Joseph travailleur&nbsp;: Le silence de l'artisan</h3>
+          <p class="block-subtitle">Père Jean-François Thomas sj · France-Catholique, 26 avril 2024</p>
+          <p>Joseph est un homme dont on ne sait presque rien et qui, pourtant, a fait couler beaucoup d'encre. Si les écrivains sont prolixes, l'homme juste de Nazareth est en revanche un taiseux…</p>
+          <div class="depliant-toggle">Lire la suite <span class="depliant-toggle__chevron">▾</span></div>
+        </summary>
+        <div class="depliant-content">
+          <p>Le père adoptif est d'abord silence, il inspire le silence et est enveloppé de silence. Pourquoi&nbsp;? Parce qu'il travaille et que sa tâche est celle d'un artisan d'art penché sur son œuvre, contemplant le matériau qu'il choisit, la forme qu'il fait surgir, qui chérit le détail. Un charpentier, un ébéniste ont besoin de ce silence pour qu'émerge de leurs mains ce qui a mûri dans leur cœur.</p>
+          <p>Joseph, de noble lignée davidique désargentée, a sans doute reçu, dès sa jeunesse, ce don pour travailler le bois. Il est homme du bois, souple, obéissant, malléable, et non point de la pierre dure, tranchante, rétive.</p>
+          <p>Pendant trente ans, saint Joseph a formé Jésus au travail des hommes, dans son atelier. Le Christ est un charpentier et il doit son savoir-faire manuel à son père adoptif. Dans le silence recueilli de ce lieu béni de Dieu, le Sauveur du monde a grandi en taille et en sagesse, sous la houlette de ce maître-artisan tout donné à son art.</p>
+          <p>Le silence de Joseph contient toutes les paroles, contient la Parole. Il n'a pas besoin de prononcer des paroles, d'utiliser des mots, car son silence laisse jaillir l'Eau vive qui s'active modestement à ses côtés dans l'atelier.</p>
+          <p>Tout homme, tout père de famille, tout époux, toute âme consacrée ne peuvent que trouver refuge dans le silence de l'atelier de Nazareth, à la suite du Christ, contemplant les gestes de Joseph, imitant son regard intérieur, travaillant avec une concentration identique, suivant son exemple pour rendre gloire à Dieu. Il est bon de se reposer à l'ombre d'un tel homme. Sa présence rassurante suffit. Son vol d'aigle habitera toujours le ciel et planera jusqu'à la fin des temps sur la terre.</p>
+          <p class="auteur" style="font-size:13px;">Source&nbsp;: france-catholique.fr</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- Texte 4 : Ascension -->
+    <div class="depliant">
+      <details class="depliant-details">
+        <summary>
+          <h3 class="block-title">L'Ascension de Notre-Seigneur</h3>
+          <p class="block-subtitle">Révérend Père Antoine Boissieu</p>
+          <p>Ô mon Dieu, que Vous êtes grand et que Vous êtes admirable&nbsp;! Ô que votre sagesse est grande et que votre conduite est incompréhensible&nbsp;!…</p>
+          <div class="depliant-toggle">Lire la méditation complète <span class="depliant-toggle__chevron">▾</span></div>
+        </summary>
+        <div class="depliant-content">
+          <p>Regarde, ô mon âme, ton divin Sauveur qui est attiré par son Père dans le trône de sa gloire, après que tu L'as considéré dans les derniers abaissements. Eh&nbsp;! Comment est-ce, ô mon Dieu, que nous pouvons rester sur la terre et ne pas Vous suivre par tous les désirs de notre cœur, puisque tout le Ciel est dans une sainte impatience de Vous recevoir, et que votre Père n'a point de plus grande joie que de Vous attirer à Lui&nbsp;?</p>
+          <p>Soyez béni, ô Père Éternel, de ce que Vous attirez si noblement votre Fils à Vous, que tous les Anges et tout le Paradis Vous rendent sans cesse des actions de grâces de la Gloire que Vous donnez aujourd'hui à Jésus.</p>
+          <p>Je veux, mon Dieu, suivre vos attraits et ne plus me laisser attirer ni aux plaisirs, ni aux honneurs, ni aux délices de la terre, mais aux attraits de la Grâce pour entrer dans votre Gloire&nbsp;: donnez-moi, mon Dieu, cette force.</p>
+          <p>Oui, mon Dieu, je renonce à toutes les inclinations de la terre&nbsp;; je ne veux rien désirer que le Ciel, je veux que toutes mes inclinations soient semblables aux inclinations de Jésus. Accordez-moi cette Grâce, ô mon aimable Sauveur&nbsp;!</p>
+          <p>Non, mon Jésus, je ne Vous chasserai plus de mon cœur par aucune faute, je Vous le donne pour toujours, et je veux que Vous en soyez le Maître absolu et que Vous le possédiez parfaitement.</p>
+          <p>Donnez-moi, doux Jésus, ces trois mouvements qui Vous ont fait monter dans le Ciel&nbsp;; attirez-moi sans cesse à Vous, et que le désir de Vous voir dans votre Gloire, soit le principal motif qui me porte vers le Ciel. Ainsi soit-il.</p>
+          <p class="auteur" style="font-size:13px;">Source&nbsp;: site-catholique.fr</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- Texte 5 : Pentecôte -->
+    <div class="depliant">
+      <details class="depliant-details">
+        <summary>
+          <h3 class="block-title">La Pentecôte — La grande fête</h3>
+          <p class="block-subtitle">Dom Pius Parsch · Le Guide dans l'année liturgique</p>
+          <p>La Pentecôte est l'octave double et jubilaire de la fête de Pâques. C'est en même temps le second point culminant du cycle pascal. À Pâques, le Christ, le divin Soleil, s'est levé&nbsp;; à la Pentecôte, il est à son zénith…</p>
+          <div class="depliant-toggle">Lire la suite <span class="depliant-toggle__chevron">▾</span></div>
+        </summary>
+        <div class="depliant-content">
+          <p>À Pâques, le jardin de l'Église est dans sa plus riche floraison avec les nouveaux baptisés et les chrétiens renouvelés. À la Pentecôte, les fleurs sont devenues des fruits qui chargent les branches des arbres. Le jardinier est le Sauveur Jésus-Christ&nbsp;; le soleil qui a fait mûrir les fruits, c'est le Saint-Esprit.</p>
+          <p>À Pâques, nous sommes nés de nouveau, comme enfants de Dieu. À la Pentecôte, nous sommes déclarés majeurs. C'est ce que signifie aussi le sacrement de la maturité, la Confirmation.</p>
+          <p>Le Saint-Esprit est l'âme de l'Église. Ce corps est vivant et la vie suppose une âme. Cette âme, c'est le Saint-Esprit. Il est le principe de vie pour l'Église et pour l'âme&nbsp;; c'est lui qui nous donne et nous conserve la vie divine. Ce n'est que par lui que nous pouvons prier, ce n'est que par lui que nous pouvons faire quelque chose de bien.</p>
+          <p>Il y a trois lieux dans l'Église où le Saint-Esprit agit particulièrement&nbsp;: le confessionnal, la chaire et l'autel. La rémission des péchés par le prêtre est une œuvre du Saint-Esprit. La prédication aussi est une œuvre du Saint-Esprit. Enfin, c'est surtout la sainte messe qui est une œuvre du Saint-Esprit.</p>
+          <p>Célébrons donc la grande fête de la Pentecôte avec un triple sentiment. D'abord dans un sentiment de joie. Ayons ensuite une foi forte et ferme à la présence et à l'action puissante du Saint-Esprit dans l'Église et dans l'âme. Enfin, un désir ardent de la venue du Saint-Esprit&nbsp;: « Viens, Saint-Esprit, remplis les cœurs de tes fidèles. »</p>
+          <p class="auteur" style="font-size:13px;">Source&nbsp;: introibo.fr</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- Homélie Pape Léon XIV -->
+    <div class="depliant">
+      <details class="depliant-details">
+        <summary>
+          <h3 class="block-title">Homélie du pape Léon XIV au Cameroun (extrait)</h3>
+          <p>Le courage des Apôtres se transforme en conscience critique, en prophétie, en dénonciation du mal, et c'est là le premier pas pour changer les choses…</p>
+          <div class="depliant-toggle">Lire l'extrait complet <span class="depliant-toggle__chevron">▾</span></div>
+        </summary>
+        <div class="depliant-content">
+          <div class="citation">
+            <p>« Il faut obéir à Dieu plutôt qu'aux hommes. Le Dieu de nos pères a ressuscité Jésus, que vous aviez exécuté en le suspendant au bois du supplice. » (Ac 5, 29-30)</p>
+          </div>
+          <p>Obéir à Dieu, en effet, n'est pas un acte de soumission qui nous opprime ou nous prive de notre liberté&nbsp;; au contraire, l'obéissance à Dieu nous rend libres, car elle signifie Lui confier notre vie et laisser sa Parole inspirer notre façon de penser et d'agir.</p>
+          <p>Celui qui obéit à Dieu avant d'obéir aux hommes ou à la pensée humaine et terrestre retrouve sa liberté intérieure, parvient à découvrir la valeur du bien et à ne pas se résigner au mal, redécouvre le chemin de la vie, devient artisan de paix et de fraternité.</p>
+          <p>Seul Dieu libère, seule sa Parole ouvre des chemins de liberté, seul son Esprit fait de nous des personnes nouvelles capables de changer ce pays.</p>
+          <p style="font-style: italic; color: var(--color-text-secondary); font-size: 15px; margin-top: 20px;">Voici des conseils qui peuvent être appliqués de façon équivalente pour la France.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===================== -->
+  <!-- SECTION : CONTACTS    -->
+  <!-- ===================== -->
+  <section id="contacts" class="section">
+    <h2 class="section-title">Contacts &amp; responsabilités</h2>
+
+    <div class="annuaire-category">
+      <div class="annuaire-category__title">Liturgie</div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Servant de Messe</span>
+        <span class="annuaire-entry__person">Denis Jordan — <a href="tel:+33683163651">06 83 16 36 51</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Responsable des fleurs</span>
+        <span class="annuaire-entry__person">Fabiola — <a href="tel:+33676887692">06 76 88 76 92</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Maître de chœur</span>
+        <span class="annuaire-entry__person">François-Xavier Chevignard — <a href="tel:+33637417340">06 37 41 73 40</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Organiste</span>
+        <span class="annuaire-entry__person">Jean Prudhomme — <a href="tel:+33602280345">06 02 28 03 45</a></span>
+      </div>
+    </div>
+
+    <div class="annuaire-category">
+      <div class="annuaire-category__title">Foyers chrétiens</div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Frat</span>
+        <span class="annuaire-entry__person">Clotilde Denizot — <a href="tel:+33663831060">06 63 83 10 60</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Domus</span>
+        <span class="annuaire-entry__person">Clémence Prudhomme — <a href="tel:+33606824036">06 06 82 40 36</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">END</span>
+        <span class="annuaire-entry__person">Bénédicte — <a href="tel:+33665581564">06 65 58 15 64</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Saint Simon et Sainte Anne</span>
+        <span class="annuaire-entry__person">Marie-Chantal Giroux — <a href="tel:+33627083281">06 27 08 32 81</a></span>
+      </div>
+    </div>
+
+    <div class="annuaire-category">
+      <div class="annuaire-category__title">Événements &amp; pèlerinages</div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Pèlerinage de Chartres (Marcheurs)</span>
+        <span class="annuaire-entry__person">Paul Pissarra — <a href="tel:+33688908740">06 88 90 87 40</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Pèlerinage de Chartres (Ange Gardien)</span>
+        <span class="annuaire-entry__person">Marie-Chantal Giroux — <a href="tel:+33627083281">06 27 08 32 81</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Maraude</span>
+        <span class="annuaire-entry__person">Déborah Forjot — <a href="tel:+33610582462">06 10 58 24 62</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Pèlerinage nocturne de Beaune</span>
+        <span class="annuaire-entry__person">Mathilde — <a href="tel:+33652551938">06 52 55 19 38</a></span>
+      </div>
+    </div>
+
+    <div class="annuaire-category">
+      <div class="annuaire-category__title">Administration</div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Panier du Chanoine</span>
+        <span class="annuaire-entry__person">Ségolène Schmitz — <a href="tel:+33651532336">06 51 53 23 36</a></span>
+      </div>
+      <div class="annuaire-entry">
+        <span class="annuaire-entry__role">Secrétariat</span>
+        <span class="annuaire-entry__person">Mathilde Frèrejacques — <a href="tel:+33610646886">06 10 64 68 86</a></span>
+      </div>
+    </div>
+  </section>
+
+</div><!-- .bulletin -->
+
+<!-- ===================== -->
+<!-- FOOTER                -->
+<!-- ===================== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__name">Chanoine Thibaut d'Aviau de Ternay</div>
+    <div class="footer__role">
+      Responsable et Desservant de l'ICRSP à Dijon<br>
+      Vicaire de la Paroisse Saint-Michel de Dijon
+    </div>
+    <ul class="footer__links">
+      <li><span class="fi">📍</span> 41 rue Saumaise – 21 000 Dijon</li>
+      <li><span class="fi">📞</span> <a href="tel:+33672771506">06 72 77 15 06</a></li>
+      <li><span class="fi">✉</span> <a href="mailto:chn.deternay@icrsp.org">chn.deternay@icrsp.org</a></li>
+      <li><span class="fi">🌐</span> <a href="https://icrspfrance.fr/apostolats/dijon" target="_blank">icrspfrance.fr/apostolats/dijon</a></li>
+    </ul>
+    <hr class="footer__separator">
+    <div class="footer__institution">
+      Apostolat de l'Institut du Christ Roi Souverain Prêtre<br>
+      dans l'Archidiocèse de Dijon
+    </div>
+    <div class="footer__devise">Veritatem Facientes in Caritate</div>
+    <div class="footer__download">
+      <a href="bulletin-icrsp-dijon-mai-2026.pdf" download>Télécharger ce bulletin en PDF</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Bouton retour en haut -->
+<a href="#top" class="back-to-top" aria-label="Retour en haut">↑</a>
+
+<script>
+// Bouton retour en haut - apparaît après scroll
+const btn = document.querySelector('.back-to-top');
+let ticking = false;
+window.addEventListener('scroll', function() {
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      if (window.scrollY > 600) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+</script>
+</body>
+</html>

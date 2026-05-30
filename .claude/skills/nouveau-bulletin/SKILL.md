@@ -11,6 +11,21 @@ en respectant SCRUPULEUSEMENT le format de `index.html`, puis publie tout automa
 Architecture : tu (Claude) fais le créatif (lecture multimodale du PDF → écriture du HTML).
 Le script `scripts/publier-numero.ps1` fait la plomberie (poppler, copie PDF, git, vérif).
 
+## ⚠️ PRINCIPE FONDAMENTAL : mise en page uniquement, JAMAIS de rédaction
+
+Ton unique travail est de **mettre en page**, pas d'écrire. Tu transcris le contenu du PDF
+**INTÉGRALEMENT et MOT POUR MOT** dans le HTML. Cela vaut pour TOUT : éditorial, événements,
+carnet, vie de l'ICRSP, et tout particulièrement les textes et prières.
+
+- **NE RÉSUME JAMAIS** un texte, un paragraphe, une prière, une méditation, un édito.
+- **NE RACCOURCIS JAMAIS**, ne paraphrase pas, n'omets aucune phrase.
+- **N'INVENTE RIEN** : aucun mot, aucune date, aucun nom qui ne soit dans le PDF.
+- Si un texte fait deux pages dans le PDF, il fait deux pages dans le HTML.
+- Recopie la ponctuation, les majuscules, les citations et les sources telles quelles.
+
+Le PDF est la source de vérité textuelle. Ton apport est EXCLUSIVEMENT la structure HTML
+(balises, classes, sections) — le texte, lui, reste celui du curé, intégralement.
+
 ## Procédure
 
 ### 1. Localiser le PDF source
@@ -44,7 +59,8 @@ sommaire (hors retraits), aux sections `#apostolat` et `#contacts`, ni au footer
 - Remplace `{{ISSUE}}` par la valeur calculée.
 - Remplace `{{MOIS-SLUG}}` par le slug.
 - Remplis les 5 sections variables (`#editorial`, `#evenements`, `#carnet`, `#icrsp`,
-  `#textes`) avec le contenu extrait, en suivant le **cookbook** ci-dessous à la lettre.
+  `#textes`) avec le contenu **intégral** du PDF (transcription mot pour mot, JAMAIS de
+  résumé — cf. Principe fondamental), en suivant le **cookbook** ci-dessous à la lettre.
 - Si une section variable n'a aucun contenu ce mois-ci, supprime la section ENTIÈRE
   ainsi que son `<li class="nav__item">` dans le sommaire.
 - Écris le résultat dans :
@@ -136,6 +152,8 @@ Comme §5.2 mais `<div class="fiche-evenement" style="border-left-color: var(--c
 ```
 
 ## Règles de fidélité
+- **Transcription INTÉGRALE, mot pour mot, de TOUT le contenu du PDF.** Aucun résumé,
+  aucune coupe, aucune paraphrase, aucune invention. (Cf. le Principe fondamental ci-dessus.)
 - Ne modifie JAMAIS le bloc `<style>` ni les sections stables (#apostolat, #contacts, footer).
 - Utilise les espaces insécables `&nbsp;` avant `: ; ! ?` comme dans index.html.
 - Liens téléphone en `<a href="tel:+33...">`, adresses en liens Google Maps.

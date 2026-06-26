@@ -1238,5 +1238,22 @@ window.addEventListener('scroll', function() {
   }
 });
 </script>
+  <!-- Mesure d'audience : ouvertures de page + clics PDF.
+       Sans cookie, sans donnée personnelle (compteur agrégé Abacus). Tableau de bord : stats.html -->
+  <script>
+  (function(){
+    var NS = "icrsp-dijon-b333";
+    var seg = location.pathname.replace(/\/+$/,"").split("/").pop();
+    var key = (!seg || seg === "index.html") ? "accueil"
+            : (seg === "archives.html") ? "archives"
+            : seg.replace(/^bulletin-icrsp-dijon-/,"").replace(/\.html$/,"").replace(/[^A-Za-z0-9]+/g,"-");
+    function bump(k){ new Image().src = "https://abacus.jasoncameron.dev/hit/" + NS + "/" + k + "?_=" + Date.now(); }
+    bump(key);
+    document.addEventListener("click", function(e){
+      var a = e.target.closest && e.target.closest("a");
+      if (a && /\.pdf(\?|$)/i.test(a.getAttribute("href") || "")) bump("pdf-" + key);
+    });
+  })();
+  </script>
 </body>
 </html>

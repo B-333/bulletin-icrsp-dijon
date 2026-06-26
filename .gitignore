@@ -9,5 +9,8 @@ Thumbs.db
 _input.pdf
 Dijon*.pdf
 
+# Transcriptions/extractions de travail issues du PDF source (non publiées)
+Dijon*.md
+
 # Pages PDF rendues en images pour l'analyse multimodale (temporaires)
 _page-*.png
